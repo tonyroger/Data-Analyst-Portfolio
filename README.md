@@ -1,6 +1,6 @@
 # Data-Analyst-Portfolio
 
-**AB Testing for e-commerce Company (python) ** -- Used the dataset from an A/B test for a mobile game to analyze the results of an A/B test to support decision making for an e-commerce company. This is to help the marketing team decide whether ads perform better than public service announcements (PSA)
+AB Testing for e-commerce Company (python) -- Used the dataset from an A/B test for a mobile game to analyze the results of an A/B test to support decision making for an e-commerce company. This is to help the marketing team decide whether ads perform better than public service announcements (PSA)
 
 Clustering project (python) -- Segmented customer data using the Kmeans clustering method as well as Hierarchical clustering in order to make better business decisions with the customers.
 
