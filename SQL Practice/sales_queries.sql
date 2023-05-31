@@ -6,7 +6,25 @@ ALTER TABLE SALES_DB
 ALTER COLUMN SHIP_DATE TYPE date USING TO_DATE(SHIP_DATE, 'DD MM YYYY');
 
 
---select * from sales_db
+-- Write a SQL query that would show us the frequency of respondents of each country (country), market (market), and region (region) group 
+-- as well as the average and median profit (profit) of those groups of the people who ordered office supplies (cetagory).
+SELECT country, market, region,
+       COUNT(*) AS frequency,
+       AVG(profit) AS average_profit,
+       PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY profit) AS median_profit
+FROM sales_db
+WHERE category = 'Office Supplies'
+GROUP BY country, market, region;
+
+
+
+--Write a SQL query to count the number of respondents who mentioned storage as one of their top three subcategory (subcategory), 
+--the number of respondents who mentioned Furniture, and the number of respondents who mentioned Chairs.
+SELECT 
+    COUNT(CASE WHEN sub_category = 'Storage' THEN 1 END) AS "Storage",
+	COUNT(CASE WHEN sub_category = 'Furniture' THEN 1 END) AS Furniture,
+    COUNT(CASE WHEN sub_category = 'Chairs' THEN 1 END) AS Chairs    
+FROM sales_db;
 
 
 -- Find all transactions in 2014
